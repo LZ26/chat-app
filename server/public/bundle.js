@@ -33436,7 +33436,433 @@ __webpack_require__.r(__webpack_exports__);
 
 class Main extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "This is a demo app");
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
+      class: "content"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "container p-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      class: "h3 mb-3"
+    }, "Messages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "card"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "row g-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "col-12 col-lg-5 col-xl-3 border-right"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "px-4 d-none d-md-block"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      type: "text",
+      class: "form-control my-3",
+      placeholder: "Search..."
+    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "badge bg-success float-right"
+    }, "5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar5.png",
+      class: "rounded-circle mr-1",
+      alt: "Vanessa Tucker",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Vanessa Tucker", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-online"
+    }), " Online")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "badge bg-success float-right"
+    }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar2.png",
+      class: "rounded-circle mr-1",
+      alt: "William Harris",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "William Harris", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-online"
+    }), " Online")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Sharon Lessman", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-online"
+    }), " Online")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar4.png",
+      class: "rounded-circle mr-1",
+      alt: "Christina Mason",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Christina Mason", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-offline"
+    }), " Offline")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar5.png",
+      class: "rounded-circle mr-1",
+      alt: "Fiona Green",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Fiona Green", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-offline"
+    }), " Offline")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar2.png",
+      class: "rounded-circle mr-1",
+      alt: "Doris Wilder",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Doris Wilder", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-offline"
+    }), " Offline")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar4.png",
+      class: "rounded-circle mr-1",
+      alt: "Haley Kennedy",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Haley Kennedy", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-offline"
+    }), " Offline")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: "#",
+      class: "list-group-item list-group-item-action border-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-start"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Jennifer Chang",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 ml-3"
+    }, "Jennifer Chang", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "fas fa-circle chat-offline"
+    }), " Offline")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("hr", {
+      class: "d-block d-lg-none mt-1 mb-0"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "col-12 col-lg-7 col-xl-9"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "py-2 px-4 border-bottom d-none d-lg-block"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "d-flex align-items-center py-1"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "position-relative"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-1 pl-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("strong", null, "Sharon Lessman"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("em", null, "Typing..."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      class: "btn btn-primary btn-lg mr-1 px-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      class: "feather feather-phone feather-lg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      class: "btn btn-info btn-lg mr-1 px-3 d-none d-md-inline-block"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      class: "feather feather-video feather-lg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("polygon", {
+      points: "23 7 16 12 23 17 23 7"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("rect", {
+      x: "1",
+      y: "5",
+      width: "15",
+      height: "14",
+      rx: "2",
+      ry: "2"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      class: "btn btn-light border btn-lg px-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      class: "feather feather-more-horizontal feather-lg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "1"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "19",
+      cy: "12",
+      r: "1"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "5",
+      cy: "12",
+      r: "1"
+    })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "position-relative"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-messages p-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:33 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:34 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right mb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:35 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Cum ea graeci tractatos.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:36 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit. Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:37 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Cras pulvinar, sapien id vehicula aliquet, diam velit elementum orci.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right mb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:38 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:39 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right mb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:40 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Cum ea graeci tractatos.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right mb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:41 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Morbi finibus, lorem id placerat ullamcorper, nunc enim ultrices massa, id dignissim metus urna eget purus.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:42 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit. Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-right mb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar1.png",
+      class: "rounded-circle mr-1",
+      alt: "Chris Wood",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:43 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 mr-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "You"), "Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "chat-message-left pb-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "https://bootdey.com/img/Content/avatar/avatar3.png",
+      class: "rounded-circle mr-1",
+      alt: "Sharon Lessman",
+      width: "40",
+      height: "40"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "text-muted small text-nowrap mt-2"
+    }, "2:44 am")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-shrink-1 bg-light rounded py-2 px-3 ml-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "font-weight-bold mb-1"
+    }, "Sharon Lessman"), "Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "flex-grow-0 py-3 px-4 border-top"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      class: "input-group"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      type: "text",
+      class: "form-control",
+      placeholder: "Type your message"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      class: "btn btn-primary"
+    }, "Send"))))))));
   }
 }
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Main, null), document.getElementById('main'));
