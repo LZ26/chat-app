@@ -3,8 +3,6 @@ const app = express();
 const morgan = require('morgan');
 const path = require('path');
 
-// const db = require('./db');
-
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
