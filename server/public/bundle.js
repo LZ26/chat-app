@@ -3759,7 +3759,9 @@ const ChatFooter = ({
     value: message,
     onChange: e => setMessage(e.target.value)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "sendBtn"
+    className: "sendBtn",
+    type: "button",
+    role: "button"
   }, "Send")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatFooter);
@@ -3821,15 +3823,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const ChatBar = () => {
+const ChatBar = ({
+  socket
+}) => {
   //dummy data for now, later will change to dynamic data
+  const [users, setUsers] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    socket.on('newUserResponse', data => setUsers(data));
+  }, [socket, users]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "chat-sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Open Chat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Global Chat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
     className: "chat-header"
   }, "Active Users"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "chat-users"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "User 7"))));
+  }, users.map(user => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    key: user.socketID
+  }, user.userName)))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatBar);
 
@@ -3905,12 +3915,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 
 
-const Main = () => {
+const Main = ({
+  socket
+}) => {
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   const [userName, setUserName] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   const handleSubmit = ev => {
     ev.preventDefault();
     localStorage.setItem('userName', userName);
+    //this sends the username and socket ID to the Node.js server
+    socket.emit('newUser', {
+      userName,
+      socketID: socket.id
+    });
     navigate('/chat');
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
