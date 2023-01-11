@@ -1,7 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './components/Main';
+import Main from './components/Guest';
+import LoginPage from './components/LoginPage';
 import ChatPage from './components/ChatPage';
 
 //new way to create react app
@@ -16,8 +17,12 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<Main socket={socket} />}></Route>
-          <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
+          <Route path="/" element={<LoginPage socket={socket} />}></Route>
+          <Route path="/guest" element={<Main socket={socket} />}></Route>
+          <Route
+            path="/globalchat"
+            element={<ChatPage socket={socket} />}
+          ></Route>
         </Routes>
       </div>
     </BrowserRouter>

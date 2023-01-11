@@ -80,11 +80,11 @@
   background-color: #d4a373;
 }
 .leaveChat-btn {
-  background-color: black;
+  background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 30px;
   box-shadow: #422800 4px 4px 0 0;
-  color: #fdfffc;
+  color: #422800;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
@@ -96,6 +96,16 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.leaveChat-btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.leaveChat-btn:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }
 .message-container {
   width: 100%;
@@ -121,7 +131,7 @@
   justify-content: space-between;
 }
 .message {
-  width: 80%;
+  width: 89%;
   height: 100%;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -148,7 +158,8 @@
 }
 
 .sendBtn:hover {
-  background-color: #fff;
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
 .sendBtn:active {
@@ -157,15 +168,19 @@
 }
 
 @media (min-width: 768px) {
-  .button-74 {
+  .sendBtn {
     min-width: 120px;
     padding: 0 25px;
   }
 }
 
-.sendBtn:hover {
-  background-color: rgb(129, 201, 129);
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .leaveChat-btn {
+    width: 100%;
+  }
 }
+
 .message-recipient {
   background-color: #f5ccc2;
   width: 300px;
@@ -173,6 +188,7 @@
   border-radius: 10px;
   font-size: 15px;
 }
+
 .message-sender {
   background-color: rgb(194, 243, 194);
   max-width: 300px;
@@ -181,6 +197,7 @@
   margin-left: auto;
   font-size: 15px;
 }
+
 .message-chats > p {
   font-size: 13px;
 }
@@ -192,4 +209,41 @@
   bottom: 70px;
   font-size: 13px;
   font-style: italic;
+}
+
+.users-list {
+  list-style: none;
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  /* fallback for old browsers */
+  /* fallback for old browsers */
+  background: #667eea;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(102, 126, 234, 0.5),
+    rgba(118, 75, 162, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(102, 126, 234, 0.5),
+    rgba(118, 75, 162, 0.5)
+  );
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
 }
