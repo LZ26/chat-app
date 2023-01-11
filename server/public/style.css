@@ -147,11 +147,11 @@
   touch-action: manipulation;
 }
 
-.button-74:hover {
+.sendBtn:hover {
   background-color: #fff;
 }
 
-.button-74:active {
+.sendBtn:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
@@ -189,7 +189,7 @@
 }
 .message-status {
   position: fixed;
-  bottom: 50px;
+  bottom: 70px;
   font-size: 13px;
   font-style: italic;
 }

@@ -29,6 +29,9 @@ socketIO.on('connection', (socket) => {
   socket.on('message', (data) => {
     socketIO.emit('messageResponse', data);
   });
+
+  //this listens to keyboard typing and shows the status to client
+  socket.on('typing', (data) => socket.broadcast.emit('typingResponse', data));
   //listens when a new user joins the server
   socket.on('newUser', (data) => {
     //Adds the new user to the list

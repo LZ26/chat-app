@@ -3735,6 +3735,12 @@ const ChatFooter = ({
   socket
 }) => {
   const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const key = Object.keys(localStorage).forEach(key => {
+    console.log(localStorage.getItem(key));
+  });
+  const handleTyping = () => {
+    socket.emit('typing', `${localStorage.getItem('userName')} is typing...`);
+  };
   const handleSendMessage = e => {
     e.preventDefault();
     if (message.trim() && localStorage.getItem('userName')) {
@@ -3757,7 +3763,8 @@ const ChatFooter = ({
     placeholder: "Write a message",
     className: "message",
     value: message,
-    onChange: e => setMessage(e.target.value)
+    onChange: e => setMessage(e.target.value),
+    onKeyDown: handleTyping
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "sendBtn",
     type: "button",
@@ -3791,9 +3798,20 @@ const ChatPage = ({
   socket
 }) => {
   const [messages, setMessages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [typingStatus, setTypingStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const lastMessageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     socket.on('messageResponse', data => setMessages([...messages, data]));
   }, [socket, messages]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    //this scrolls to bottom of page automatically every time message change
+    lastMessageRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }, [messages]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    socket.on('typingResponse', data => setTypingStatus(data));
+  }, [socket]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "chat"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Chatbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3801,7 +3819,9 @@ const ChatPage = ({
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "chat-main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Chatbody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    messages: messages
+    messages: messages,
+    typingStatus: typingStatus,
+    lastMessageRef: lastMessageRef
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ChatFooter__WEBPACK_IMPORTED_MODULE_3__["default"], {
     socket: socket
   })));
@@ -3861,7 +3881,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ChatBody = ({
-  messages
+  messages,
+  typingStatus,
+  lastMessageRef
 }) => {
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   const handleLeaveChat = () => {
@@ -3894,7 +3916,9 @@ const ChatBody = ({
     className: "message-recipient"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, message.text)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "message-status"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "One of the users is typing..."))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, typingStatus)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    ref: lastMessageRef
+  })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatBody);
 
@@ -3920,13 +3944,16 @@ const Main = ({
 }) => {
   const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   const [userName, setUserName] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [password, setPassword] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   const handleSubmit = ev => {
     ev.preventDefault();
     localStorage.setItem('userName', userName);
+    localStorage.setItem('password', password);
     //this sends the username and socket ID to the Node.js server
     socket.emit('newUser', {
       userName,
-      socketID: socket.id
+      socketID: socket.id,
+      password
     });
     navigate('/chat');
   };
@@ -3935,9 +3962,9 @@ const Main = ({
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "home-header"
-  }, "Sign in to Open Chat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+  }, "Welcome to Hangout Club "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
     htmlFor: "username"
-  }, "Username"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     minLength: 6,
     name: "username",
@@ -3945,6 +3972,16 @@ const Main = ({
     className: "username",
     value: userName,
     onChange: ev => setUserName(ev.target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "password"
+  }, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "password",
+    minLength: 8,
+    name: "password",
+    id: "password",
+    className: "password",
+    value: password,
+    onChange: ev => setPassword(ev.target.value)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "home-signin"
   }, "Sign In"));
