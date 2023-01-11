@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Main } from './views/Main';
+import { Main } from './components/Main';
 
 //new way to create react app
 const container = document.getElementById('main');
