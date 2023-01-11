@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Main = () => {
+const Main = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState('');
 
@@ -27,3 +27,5 @@ export const Main = () => {
     </form>
   );
 };
+
+export default Main;
