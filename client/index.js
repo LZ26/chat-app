@@ -1,11 +1,27 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Main from './views/Main';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Main } from './views/Main';
+
+//new way to create react app
+const container = document.getElementById('main');
+const root = createRoot(container);
 
 import socketIO from 'socket.io-client';
 const socket = socketIO.connect('http://localhost:3000');
 
-const container = document.getElementById('main');
-const root = createRoot(container);
+const App = () => {
+  return (
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Main socket={socket} />}></Route>
+          {/* <Route path="/chat" element={<Chatpage socket={socket} />}></Route> */}
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+};
 
-root.render(<Main />);
+//renders the whole app
+root.render(<App />);
