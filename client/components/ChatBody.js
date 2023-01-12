@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import timeAgo from 'node-time-ago';
 
 const ChatBody = ({ messages, typingStatus, lastMessageRef }) => {
   const navigate = useNavigate();
@@ -29,6 +30,9 @@ const ChatBody = ({ messages, typingStatus, lastMessageRef }) => {
               <div className="message-sender">
                 <p>{message.text}</p>
               </div>
+              <div className="current-time">
+                <p>{timeAgo(new Date())}</p>
+              </div>
             </div>
           ) : (
             /*This will display messages received by us*/
@@ -36,6 +40,9 @@ const ChatBody = ({ messages, typingStatus, lastMessageRef }) => {
               <p>{message.name}</p>
               <div className="message-recipient">
                 <p>{message.text}</p>
+              </div>
+              <div className="current-time">
+                <p>{timeAgo(new Date())}</p>
               </div>
             </div>
           )

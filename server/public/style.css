@@ -182,27 +182,38 @@
 }
 
 .message-recipient {
-  background-color: #f5ccc2;
+  background-color: #00000047;
   width: 300px;
   padding: 10px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .message-sender {
-  background-color: rgb(194, 243, 194);
+  background-color: rgba(188, 156, 255, 1);
   max-width: 300px;
   padding: 10px;
   border-radius: 10px;
   margin-left: auto;
-  font-size: 15px;
+  font-size: 25px;
+}
+
+.current-time {
+  background-color: rgb(255, 255, 255);
+  max-width: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 8px;
+  font-style: italic;
 }
 
 .message-chats > p {
-  font-size: 13px;
+  font-size: 20px;
 }
 .sender-name {
   text-align: right;
+  font-size: 20px;
 }
 .message-status {
   position: fixed;

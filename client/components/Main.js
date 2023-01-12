@@ -9,7 +9,7 @@ const Main = ({ socket }) => {
   const navigate = useNavigate();
 
   const [userName, setUserName] = useState('');
-  const [currentView, setCurrentView] = useState('logIn');
+  const [currentView, setCurrentView] = useState('guest');
 
   const [formData, setFormData] = useState({
     username: '',
