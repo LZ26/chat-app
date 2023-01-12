@@ -3,6 +3,7 @@
 ## In order to install, run the following:
 
 ```
+git clone https://github.com/LZ26/chat-app.git
 npm install
 npm run start:dev
 ```
