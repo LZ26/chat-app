@@ -18,7 +18,7 @@ npm run start:dev
 
 *REACT, REDUX, AXIOS, other helper libraries
 
-###Back-end:
+### Back-end:
 *NODE.JS, EXPRESS.JS, POSTGRES, SEQUELIZE.JS, SOCKET.IO, and other helper libraries
 
 #### App is deployed with Heroku.
