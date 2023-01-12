@@ -10,9 +10,9 @@ npm run start:dev
 
 ## App features:
 
-*Simple globalchat where users can join to chat with anyone in the online room.
-*User can signup and make a private account to chat with individual user.
-*DM or private messaging feature is work in progress...
+Simple globalchat where users can join to chat with anyone in the online room.
+User can signup and make a private account to chat with individual user.
+DM or private messaging feature is work in progress...
 
 ## Tech stack & libraries used:
 ### Front-end:
