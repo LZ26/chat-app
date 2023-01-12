@@ -1,15 +1,46 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
-import Dashboard from './Dashboard';
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginPage = ({ setToken, setView }) => {
   //local state to capture username and password entered
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [data, setData] = useState({});
+
+  const notify = () => toast.error('Wrong username or password');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setIsError(false);
+
+    const data = {
+      username,
+      password,
+    };
+
+    await axios
+      .post('/api/auth/login', data)
+      .then((res) => {
+        setData(res.data);
+        setUserName('');
+        setPassword('');
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setIsError(true);
+        notify();
+      });
+  };
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Hangout Club</h2>
         <fieldset>
           <legend style={{ textAlign: 'center' }}>Log In</legend>
@@ -40,7 +71,9 @@ const LoginPage = ({ setToken, setView }) => {
             </li>
           </ul>
         </fieldset>
-        <button type="submit">Login</button>
+        <button type="submit" onClick={handleSubmit}>
+          Login
+        </button>
         <button type="button" onClick={() => setView('guest')}>
           Guest Access
         </button>
@@ -52,8 +85,8 @@ const LoginPage = ({ setToken, setView }) => {
   );
 };
 
-LoginPage.prototypes = {
-  setToken: propTypes.func.isRequired,
-};
+// LoginPage.prototypes = {
+//   setToken: propTypes.func.isRequired,
+// };
 
 export default LoginPage;

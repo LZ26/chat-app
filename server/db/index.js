@@ -8,4 +8,8 @@ Session.belongsTo(User);
 
 module.exports = {
   db,
+  models: {
+    User,
+    Session,
+  },
 };

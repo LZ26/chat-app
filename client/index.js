@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Main from './components/Main';
 import ChatPage from './components/ChatPage';
-import Dashboard from './components/Dashboard';
 
 //new way to create react app
 const container = document.getElementById('main');
@@ -24,7 +23,6 @@ const App = () => {
             path="/globalchat"
             element={<ChatPage socket={socket} />}
           ></Route>
-          <Route exact path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

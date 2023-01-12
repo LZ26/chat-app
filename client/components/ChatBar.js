@@ -9,10 +9,8 @@ const ChatBar = ({ socket }) => {
   }, [socket, users]);
   return (
     <div className="chat-sidebar">
-      <h2>Global Chat</h2>
-
       <div>
-        <h4 className="chat-header">Active Users</h4>
+        <h2 className="chat-header">Active Users:</h2>
         <div className="chat-users">
           {users.map((user) => (
             <ul key={user.socketID}>

@@ -1,12 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
-router.get('/', async (req, res, next) => {
-  try {
-    await res.json({ message: 'Testing server routes' });
-  } catch (err) {
-    next(err);
-  }
-});
+router.use('/auth', require('./login'));
 
 module.exports = router;

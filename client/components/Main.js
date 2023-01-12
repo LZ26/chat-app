@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
 import Guest from './Guest';
 import PasswordReset from './PasswordReset';
 import LoginPage from './LoginPage';
@@ -11,8 +10,6 @@ const Main = ({ socket }) => {
 
   const [userName, setUserName] = useState('');
   const [currentView, setCurrentView] = useState('logIn');
-
-  const [token, setToken] = useState();
 
   const [formData, setFormData] = useState({
     username: '',
@@ -53,6 +50,7 @@ const Main = ({ socket }) => {
         return (
           <SignupPage
             formData={formData}
+            setFormData={setFormData}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             setView={setView}
@@ -60,9 +58,7 @@ const Main = ({ socket }) => {
         );
         break;
       case 'logIn':
-        if (!token) {
-          return <LoginPage setToken={setToken} setView={setView} />;
-        }
+        return <LoginPage setView={setView} />;
         break;
       case 'guest':
         return (
@@ -83,17 +79,4 @@ const Main = ({ socket }) => {
   return <section id="entry-page">{changeView()}</section>;
 };
 
-//example of mapstatetoprops usage
-//const mapstateToProps = state =› ({ groceries: state groceries });
-
-//example of mapdispatchtoprops usage
-// function mapDispatchToProps (dispatch) {
-//   return {
-//     add: function (text) {
-//       dispatch(addGrocery(text));
-//     }
-//   };
-// }
-
-//accepts four arguments: mapstatetoprops, mapdispatchtoprops, etc. all optional
-export default connect()(Main);
+export default Main;

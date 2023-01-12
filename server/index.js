@@ -3,21 +3,27 @@ const app = express();
 const { db } = require('./db');
 const morgan = require('morgan');
 const path = require('path');
+const authMiddleware = require('./routes/middleware/auth');
+const cookieParser = require('cookie-parser');
 
-//middlewares
+//logging middleware
 app.use(morgan('dev'));
+
+//body parsing middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+//static files serving middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
 //integrating cors to our app
 const http = require('http').Server(app);
 const cors = require('cors');
-
-const PORT = process.env.PORT || 3000; //use port from env or 3000 by default
-
 app.use(cors());
 
 //creating real-time connection
+const PORT = process.env.PORT || 3000; //use port from env or 3000 by default
 const socketIO = require('socket.io')(http, {
   cors: {
     origin: `http://localhost:${PORT}`,
@@ -56,7 +62,20 @@ socketIO.on('connection', (socket) => {
   });
 });
 
-app.use('/login', require('./routes/login'));
+//routes access via AJAX are prepended with /api, so as to avoid the GET /* wildcard
+app.use(authMiddleware);
+app.use('/api', require('./routes'));
+
+//sends index.html(single-page SPA)
+app.use('*', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+//error middleware
+app.use((err, req, res, next) => {
+  if (process.env.NODE_ENV !== 'test') console.error(err.stack);
+  res.status(err.status || 500).send(err.message || 'Internal server error');
+});
 
 const init = async () => {
   try {
