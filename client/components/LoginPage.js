@@ -7,8 +7,28 @@ const LoginPage = ({ socket }) => {
   const [userName, setUserName] = useState('');
   const [currentView, setCurrentView] = useState('logIn');
 
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (ev) => {
+    setFormData({
+      ...formData,
+      [ev.target.name]: ev.target.value,
+    });
+  };
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
+    // processSubmittedDataFunction(formData);
+    setFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+
     localStorage.setItem('userName', userName);
     //this sends the username and socket ID to the Node.js server
     socket.emit('newUser', { userName, socketID: socket.id });
@@ -23,26 +43,48 @@ const LoginPage = ({ socket }) => {
     switch (currentView) {
       case 'signUp':
         return (
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2>Hangout Club</h2>
             <fieldset>
               <legend style={{ textAlign: 'center' }}>Create Account</legend>
               <ul>
                 <li>
                   <label htmlFor="username">Username:</label>
-                  <input type="text" id="username" required />
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                  />
                 </li>
                 <li>
                   <label htmlFor="email">Email:</label>
-                  <input type="email" id="email" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </li>
                 <li>
                   <label htmlFor="password">Password:</label>
-                  <input type="password" id="password" required />
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                  />
                 </li>
               </ul>
+              <button>Submit</button>
             </fieldset>
-            <button>Submit</button>
+            {/* <button>Submit</button> */}
             <button type="button" onClick={() => setView('logIn')}>
               Have an Account?
             </button>
@@ -103,10 +145,10 @@ const LoginPage = ({ socket }) => {
                   />
                 </li>
               </ul>
-              <button type="button" onClick={handleSubmit}>
-                Chat Now
-              </button>
             </fieldset>
+            <button type="button" onClick={handleSubmit}>
+              Chat Now
+            </button>
             <button type="button" onClick={() => setView('logIn')}>
               Go Back
             </button>
@@ -142,4 +184,17 @@ const LoginPage = ({ socket }) => {
   return <section id="entry-page">{changeView()}</section>;
 };
 
-export default LoginPage;
+//example of mapstatetoprops usage
+//const mapstateToProps = state =› ({ groceries: state groceries });
+
+//example of mapdispatchtoprops usage
+// function mapDispatchToProps (dispatch) {
+//   return {
+//     add: function (text) {
+//       dispatch(addGrocery(text));
+//     }
+//   };
+// }
+
+//accepts four arguments: mapstatetoprops, mapdispatchtoprops, etc. all optional
+export default connect()(LoginPage);

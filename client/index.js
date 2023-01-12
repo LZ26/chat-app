@@ -1,7 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './components/Guest';
+import { Provider } from 'react-redux';
+import store from './store';
 import LoginPage from './components/LoginPage';
 import ChatPage from './components/ChatPage';
 
@@ -18,7 +19,6 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<LoginPage socket={socket} />}></Route>
-          {/* <Route path="/guest" element={<Main socket={socket} />}></Route> */}
           <Route
             path="/globalchat"
             element={<ChatPage socket={socket} />}
@@ -29,5 +29,9 @@ const App = () => {
   );
 };
 
-//renders the whole app
-root.render(<App />);
+//renders the whole app wrapped with provider to connect react-redux
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
