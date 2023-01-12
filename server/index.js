@@ -56,7 +56,7 @@ socketIO.on('connection', (socket) => {
   });
 });
 
-app.use('/routes', require('./routes'));
+app.use('/login', require('./routes/login'));
 
 const init = async () => {
   try {

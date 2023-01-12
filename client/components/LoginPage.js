@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
+import Dashboard from './Dashboard';
 
-const LoginPage = ({ setView }) => {
+const LoginPage = ({ setToken, setView }) => {
+  //local state to capture username and password entered
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
+
   return (
     <>
       <form>
@@ -10,11 +16,21 @@ const LoginPage = ({ setView }) => {
           <ul>
             <li>
               <label htmlFor="username">Username:</label>
-              <input type="text" id="username" required />
+              <input
+                type="text"
+                id="username"
+                onChange={(e) => setUserName(e.target.value)}
+                required
+              />
             </li>
             <li>
               <label htmlFor="password">Password:</label>
-              <input type="password" id="password" required />
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </li>
             <li>
               <i />
@@ -24,7 +40,7 @@ const LoginPage = ({ setView }) => {
             </li>
           </ul>
         </fieldset>
-        <button>Login</button>
+        <button type="submit">Login</button>
         <button type="button" onClick={() => setView('guest')}>
           Guest Access
         </button>
@@ -34,6 +50,10 @@ const LoginPage = ({ setView }) => {
       </form>
     </>
   );
+};
+
+LoginPage.prototypes = {
+  setToken: propTypes.func.isRequired,
 };
 
 export default LoginPage;

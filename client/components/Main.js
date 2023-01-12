@@ -12,6 +12,8 @@ const Main = ({ socket }) => {
   const [userName, setUserName] = useState('');
   const [currentView, setCurrentView] = useState('logIn');
 
+  const [token, setToken] = useState();
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -58,7 +60,9 @@ const Main = ({ socket }) => {
         );
         break;
       case 'logIn':
-        return <LoginPage setView={setView} />;
+        if (!token) {
+          return <LoginPage setToken={setToken} setView={setView} />;
+        }
         break;
       case 'guest':
         return (
