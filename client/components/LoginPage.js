@@ -85,8 +85,4 @@ const LoginPage = ({ setToken, setView }) => {
   );
 };
 
-// LoginPage.prototypes = {
-//   setToken: propTypes.func.isRequired,
-// };
-
 export default LoginPage;
