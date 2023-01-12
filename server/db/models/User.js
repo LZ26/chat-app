@@ -12,6 +12,15 @@ const User = db.define('user', {
     },
   },
 
+  email: {
+    type: STRING,
+    allowNull: false,
+    validate: {
+      isEmail: true,
+      notEmpty: true,
+    },
+  },
+
   password: {
     type: STRING,
     allowNull: false,

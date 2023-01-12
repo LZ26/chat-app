@@ -1,34 +1,37 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-// //This component will become guest login to global chat.
-// const Main = ({ socket }) => {
-//   const navigate = useNavigate();
-//   const [userName, setUserName] = useState('');
+const Guest = ({ userName, setUserName, setView, handleSubmit }) => {
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <h2>Hangout Club</h2>
+        <fieldset>
+          <legend style={{ textAlign: 'center' }}>Guest Access</legend>
+          <ul>
+            <li>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                minLength={1}
+                name="username"
+                className="username"
+                value={userName}
+                onChange={(ev) => setUserName(ev.target.value)}
+                required
+              />
+            </li>
+          </ul>
+        </fieldset>
+        <button type="button" onClick={handleSubmit}>
+          Chat Now
+        </button>
+        <button type="button" onClick={() => setView('logIn')}>
+          Go Back
+        </button>
+      </form>
+    </>
+  );
+};
 
-//   const handleSubmit = (ev) => {
-//     ev.preventDefault();
-//     localStorage.setItem('userName', userName);
-//     //this sends the username and socket ID to the Node.js server
-//     socket.emit('newUser', { userName, socketID: socket.id });
-//     navigate('/globalchat');
-//   };
-//   return (
-//     <form className="home-container" onSubmit={handleSubmit}>
-//       <h2 className="home-header">Welcome to Hangout Club </h2>
-//       <label htmlFor="username">Pick a nickname:</label>
-//       <input
-//         type="text"
-//         minLength={6}
-//         name="username"
-//         id="username"
-//         className="username"
-//         value={userName}
-//         onChange={(ev) => setUserName(ev.target.value)}
-//       />
-//       <button className="home-signin">Join</button>
-//     </form>
-//   );
-// };
-
-// export default Main;
+export default Guest;

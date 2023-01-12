@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import LoginPage from './components/LoginPage';
+import Main from './components/Main';
 import ChatPage from './components/ChatPage';
 
 //new way to create react app
@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<LoginPage socket={socket} />}></Route>
+          <Route path="/" element={<Main socket={socket} />}></Route>
           <Route
             path="/globalchat"
             element={<ChatPage socket={socket} />}
