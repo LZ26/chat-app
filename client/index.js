@@ -18,7 +18,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<LoginPage socket={socket} />}></Route>
-          <Route path="/guest" element={<Main socket={socket} />}></Route>
+          {/* <Route path="/guest" element={<Main socket={socket} />}></Route> */}
           <Route
             path="/globalchat"
             element={<ChatPage socket={socket} />}

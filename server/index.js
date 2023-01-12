@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
+const { db } = require('./db');
 const morgan = require('morgan');
 const path = require('path');
 
+//middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//integrating cors to our app
 const http = require('http').Server(app);
 const cors = require('cors');
+
 const PORT = process.env.PORT || 3000; //use port from env or 3000 by default
 
 app.use(cors());
@@ -54,6 +58,16 @@ socketIO.on('connection', (socket) => {
 
 app.use('/routes', require('./routes'));
 
-http.listen(PORT, () => {
-  console.log(`This app is running on a port: ${PORT}`);
-});
+const init = async () => {
+  try {
+    await db.sync().then(() => {
+      http.listen(PORT, () => {
+        console.log(`This app is running on a port: ${PORT}`);
+      });
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+init();

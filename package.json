@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "build:dev": "webpack -w",
+    "build-watch": "webpack -w --mode development",
     "start": "nodemon server/index.js",
-    "start:dev": "npm run build && npm run start"
+    "start:dev": "npm run build-watch & npm run start"
   },
   "repository": {
     "type": "git",
@@ -24,8 +23,10 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "path": "^0.12.7",
+    "pg": "^8.8.0",
     "react-bootstrap": "^2.7.0",
     "react-router-dom": "^6.6.2",
+    "sequelize": "^6.28.0",
     "socket-io": "^1.0.0",
     "socket.io": "^4.5.4",
     "socket.io-client": "^4.5.4",
