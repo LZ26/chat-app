@@ -28,7 +28,7 @@ const PORT = process.env.PORT; //use port from env or 3000 by default
 
 const socketIO = require('socket.io')(http, {
   cors: {
-    origin: `http://localhost:${PORT}`,
+    origin: `https://hangout-club.com`,
   },
   allowRequest: (req, callback) => {
     const noOriginHeader = req.headers.origin === undefined;
