@@ -1,34 +1,36 @@
-const { models } = require('../../db/index');
-const { Session, User } = models;
+//Commented out for demo purposes, will be used later.
 
-const authMiddleware = async (req, res, next) => {
-  try {
-    const { sid } = req.cookies;
+// const { models } = require('../../db/index');
+// const { Session, User } = models;
 
-    if (!sid) {
-      console.log('No session associated with this user.');
-      req.user = null;
-    } else {
-      const session = await Session.findByPk(sid, {
-        include: User,
-      });
+// const authMiddleware = async (req, res, next) => {
+//   try {
+//     const { sid } = req.cookies;
 
-      if (!session) {
-        console.log(
-          'Invalid session ID - not located in database. Removing cookie.'
-        );
-        res.clearCookie('sid');
-        req.user = null;
-      } else {
-        // You could update the expiry of the cookie here if desired.
-        console.log(`Session User Identified: ${session.user.username}`);
-        req.user = session.user;
-      }
-    }
-    next();
-  } catch (err) {
-    next(err);
-  }
-};
+//     if (!sid) {
+//       console.log('No session associated with this user.');
+//       req.user = null;
+//     } else {
+//       const session = await Session.findByPk(sid, {
+//         include: User,
+//       });
 
-module.exports = authMiddleware;
+//       if (!session) {
+//         console.log(
+//           'Invalid session ID - not located in database. Removing cookie.'
+//         );
+//         res.clearCookie('sid');
+//         req.user = null;
+//       } else {
+//         // You could update the expiry of the cookie here if desired.
+//         console.log(`Session User Identified: ${session.user.username}`);
+//         req.user = session.user;
+//       }
+//     }
+//     next();
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+
+// module.exports = authMiddleware;

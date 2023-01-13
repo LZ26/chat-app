@@ -1,33 +1,35 @@
-const Sequelize = require('sequelize');
-const db = require('../db');
+//Commented out for demo purposes, will be used later.
 
-const User = db.define('user', {
-  userName: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-      isAlpha: true,
-    },
-  },
+// const Sequelize = require('sequelize');
+// const db = require('../db');
 
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      isEmail: true,
-      notEmpty: true,
-    },
-  },
+// const User = db.define('user', {
+//   userName: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     validate: {
+//       notEmpty: true,
+//       isAlpha: true,
+//     },
+//   },
 
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    defaultValue: 'none',
-    validate: {
-      notEmpty: true,
-    },
-  },
-});
+//   email: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     validate: {
+//       isEmail: true,
+//       notEmpty: true,
+//     },
+//   },
 
-module.exports = User;
+//   password: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     defaultValue: 'none',
+//     validate: {
+//       notEmpty: true,
+//     },
+//   },
+// });
+
+// module.exports = User;

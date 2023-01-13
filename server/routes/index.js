@@ -1,5 +1,7 @@
-const router = require('express').Router();
+//Commented out for demo purposes, will be used later.
 
-router.use('/auth', require('./login'));
+// const router = require('express').Router();
 
-module.exports = router;
+// router.use('/auth', require('./login'));
+
+// module.exports = router;

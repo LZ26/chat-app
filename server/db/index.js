@@ -1,15 +1,17 @@
-const db = require('./db');
-const Session = require('./models/Session');
-const User = require('./models/User');
+//Commented out for demo purposes, will be used later.
 
-//Model relationships are established here.
-User.hasMany(Session);
-Session.belongsTo(User);
+// const db = require('./db');
+// const Session = require('./models/Session');
+// const User = require('./models/User');
 
-module.exports = {
-  db,
-  models: {
-    User,
-    Session,
-  },
-};
+// //Model relationships are established here.
+// User.hasMany(Session);
+// Session.belongsTo(User);
+
+// module.exports = {
+//   db,
+//   models: {
+//     User,
+//     Session,
+//   },
+// };

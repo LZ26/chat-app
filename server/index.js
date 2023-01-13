@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const { db } = require('./db');
+// const { db } = require('./db');
 const morgan = require('morgan');
 const path = require('path');
-const authMiddleware = require('./routes/middleware/auth');
+// const authMiddleware = require('./routes/middleware/auth');
 const cookieParser = require('cookie-parser');
 
 //logging middleware
@@ -65,8 +65,8 @@ socketIO.on('connection', (socket) => {
 });
 
 //routes access via AJAX are prepended with /api, so as to avoid the GET /* wildcard
-app.use(authMiddleware);
-app.use('/api', require('./routes'));
+// app.use(authMiddleware);
+// app.use('/api', require('./routes'));
 
 //sends index.html(single-page SPA)
 app.use('*', (req, res, next) => {
@@ -81,11 +81,11 @@ app.use('*', (req, res, next) => {
 
 const init = async () => {
   try {
-    await db.sync().then(() => {
-      http.listen(PORT, () => {
-        console.log(`This app is running on a port: ${PORT}`);
-      });
+    // await db.sync().then(() => {
+    http.listen(PORT, () => {
+      console.log(`This app is running on a port: ${PORT}`);
     });
+    // });
   } catch (err) {
     console.error(err);
   }
