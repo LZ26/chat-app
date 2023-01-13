@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "start-nodemon": "nodemon server/index.js",
+    "production-start": "PROD=true node index.js",
     "build-watch": "webpack -w --mode development",
     "start:dev": "npm run build-watch & npm run start-nodemon"
   },
