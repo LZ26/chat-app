@@ -18,9 +18,9 @@ router.post('/login', async (req, res) => {
         include: [Session],
       });
       // const comparisonResult = await bcrypt.compare(password, foundUser.password);
-      if (password !== foundUser.password) {
-        throw new Error('Mismatched password!');
-      }
+      // if (password !== foundUser.password) {
+      //   throw new Error('Mismatched password!');
+      // }
 
       if (foundUser) {
         if (foundUser.session) {

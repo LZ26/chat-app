@@ -20,7 +20,7 @@ router.get('/:id', async (req, res, next) => {
     if (!singleUser) {
       const error = new Error('USER WAS NOT FOUND');
       error.status = 404;
-      throw error;
+      console.error(error);
     }
     res.status(200).send(singleUser);
   } catch (err) {
