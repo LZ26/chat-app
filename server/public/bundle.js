@@ -70003,7 +70003,7 @@ __webpack_require__.r(__webpack_exports__);
 const container = document.getElementById('main');
 const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
 
-const socket = socket_io_client__WEBPACK_IMPORTED_MODULE_6__["default"].connect('http://localhost:3000');
+const socket = socket_io_client__WEBPACK_IMPORTED_MODULE_6__["default"].connect('https://hangout-club.herokuapp.com');
 const App = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
     path: "/",

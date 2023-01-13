@@ -11,7 +11,7 @@ const container = document.getElementById('main');
 const root = createRoot(container);
 
 import socketIO from 'socket.io-client';
-const socket = socketIO.connect('http://localhost:3000');
+const socket = socketIO.connect('https://hangout-club.herokuapp.com');
 
 const App = () => {
   return (
