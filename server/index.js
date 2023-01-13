@@ -30,6 +30,10 @@ const socketIO = require('socket.io')(http, {
   cors: {
     origin: `http://localhost:${PORT}`,
   },
+  allowRequest: (req, callback) => {
+    const noOriginHeader = req.headers.origin === undefined;
+    callback(null, noOriginHeader);
+  },
 });
 
 let users = [];
