@@ -85,7 +85,7 @@ const init = async () => {
       });
     });
   } catch (err) {
-    next(err);
+    console.error(err);
   }
 };
 
