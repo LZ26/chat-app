@@ -23,7 +23,7 @@ const cors = require('cors');
 app.use(cors());
 
 //creating real-time connection
-const PORT = process.env.PORT || 3000; //use port from env or 3000 by default
+const PORT = process.env.PORT; //use port from env or 3000 by default
 //
 
 const socketIO = require('socket.io')(http, {
