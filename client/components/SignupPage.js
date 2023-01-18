@@ -1,28 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { signUp } from '../redux/signup';
 
-const SignupPage = ({ formData, setFormData, setView }) => {
-  const { username, email, password } = formData;
+const SignupPage = ({ signUp }) => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
 
-  const create = (ev) => {
-    ev.preventDefault();
-
-    if (username === '' || email === '' || password === '') {
-      window.alert('please enter vaild information!!!');
-    } else {
-      mapDispatchToProps({
-        username: username,
-        email: email,
-        password: password,
-      });
-      window.alert('Succesfully created an account');
-      window.location.replace('/');
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signUp(formData);
   };
 
   return (
     <>
-      <form onSubmit={create}>
+      <form onSubmit={handleSubmit}>
         <h2>Hangout Club</h2>
         <fieldset>
           <legend style={{ textAlign: 'center' }}>Create Account</legend>
@@ -33,8 +27,10 @@ const SignupPage = ({ formData, setFormData, setView }) => {
                 type="text"
                 id="username"
                 name="username"
-                value={username}
-                onChange={(ev) => setFormData({ username: ev.target.value })}
+                value={formData.username}
+                onChange={(e) =>
+                  setFormData({ ...formData, username: e.target.value })
+                }
                 required
               />
             </li>
@@ -44,8 +40,10 @@ const SignupPage = ({ formData, setFormData, setView }) => {
                 type="email"
                 id="email"
                 name="email"
-                value={email}
-                onChange={(ev) => setFormData({ email: ev.target.value })}
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 required
               />
             </li>
@@ -55,14 +53,16 @@ const SignupPage = ({ formData, setFormData, setView }) => {
                 type="password"
                 id="password"
                 name="password"
-                value={password}
-                onChange={(ev) => setFormData({ password: ev.target.value })}
+                value={formData.password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
                 required
               />
             </li>
           </ul>
         </fieldset>
-        <button>Submit</button>
+        <button type="submit">Sign Up</button>
         <button type="button" onClick={() => setView('logIn')}>
           Have an Account?
         </button>
@@ -73,9 +73,7 @@ const SignupPage = ({ formData, setFormData, setView }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createUser: (user) => {
-      dispatch(createUser(user));
-    },
+    signUp: (data) => dispatch(signUp(data)),
   };
 };
 

@@ -4242,34 +4242,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_signup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/signup */ "./client/redux/signup.js");
+
 
 
 const SignupPage = ({
-  formData,
-  setFormData,
-  setView
+  signUp
 }) => {
-  const {
-    username,
-    email,
-    password
-  } = formData;
-  const create = ev => {
-    ev.preventDefault();
-    if (username === '' || email === '' || password === '') {
-      window.alert('please enter vaild information!!!');
-    } else {
-      mapDispatchToProps({
-        username: username,
-        email: email,
-        password: password
-      });
-      window.alert('Succesfully created an account');
-      window.location.replace('/');
-    }
+  const [formData, setFormData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    username: '',
+    email: '',
+    password: ''
+  });
+  const handleSubmit = e => {
+    e.preventDefault();
+    signUp(formData);
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
-    onSubmit: create
+    onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Hangout Club"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", {
     style: {
       textAlign: 'center'
@@ -4280,9 +4270,10 @@ const SignupPage = ({
     type: "text",
     id: "username",
     name: "username",
-    value: username,
-    onChange: ev => setFormData({
-      username: ev.target.value
+    value: formData.username,
+    onChange: e => setFormData({
+      ...formData,
+      username: e.target.value
     }),
     required: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
@@ -4291,9 +4282,10 @@ const SignupPage = ({
     type: "email",
     id: "email",
     name: "email",
-    value: email,
-    onChange: ev => setFormData({
-      email: ev.target.value
+    value: formData.email,
+    onChange: e => setFormData({
+      ...formData,
+      email: e.target.value
     }),
     required: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
@@ -4302,21 +4294,22 @@ const SignupPage = ({
     type: "password",
     id: "password",
     name: "password",
-    value: password,
-    onChange: ev => setFormData({
-      password: ev.target.value
+    value: formData.password,
+    onChange: e => setFormData({
+      ...formData,
+      password: e.target.value
     }),
     required: true
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", null, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "submit"
+  }, "Sign Up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     type: "button",
     onClick: () => setView('logIn')
   }, "Have an Account?")));
 };
 const mapDispatchToProps = dispatch => {
   return {
-    createUser: user => {
-      dispatch(createUser(user));
-    }
+    signUp: data => dispatch((0,_redux_signup__WEBPACK_IMPORTED_MODULE_2__.signUp)(data))
   };
 };
 
@@ -4344,6 +4337,30 @@ const appReducer = (0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
   users: _users__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (appReducer);
+
+/***/ }),
+
+/***/ "./client/redux/signup.js":
+/*!********************************!*\
+  !*** ./client/redux/signup.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "signUp": () => (/* binding */ signUp)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+
+const signUp = data => async dispatch => {
+  try {
+    const res = await axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/signup', data);
+    console.log(res);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 /***/ }),
 
