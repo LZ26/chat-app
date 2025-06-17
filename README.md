@@ -1,4 +1,4 @@
-# Hangout Club
+# Simple Chatroom App
 
 ## In order to install, run the following:
 
@@ -10,7 +10,7 @@ npm run start:dev
 
 ## App features:
 
-Simple globalchat where users can join to chat with anyone in the online room.
+Simple global chatroom where users can join to chat with anyone in the online room.
 User can signup and make a private account to chat with individual user.
 DM or private messaging feature are planned features.
 
@@ -24,4 +24,4 @@ DM or private messaging feature are planned features.
 
 #### App is deployed with Heroku.
 
-#### This is a demo version, pre-MVP version.
+#### This is a demo version, pre-MVP release.
