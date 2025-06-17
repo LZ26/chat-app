@@ -12,7 +12,7 @@ npm run start:dev
 
 Simple globalchat where users can join to chat with anyone in the online room.
 User can signup and make a private account to chat with individual user.
-DM or private messaging feature is work in progress...
+DM or private messaging feature are planned features.
 
 ## Tech stack & libraries used:
 ### Front-end:
@@ -24,4 +24,4 @@ DM or private messaging feature is work in progress...
 
 #### App is deployed with Heroku.
 
-#### This is a demo version, full version is work in progress...
+#### This is a demo version, pre-MVP version.
