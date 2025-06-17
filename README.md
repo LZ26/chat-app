@@ -22,6 +22,6 @@ DM or private messaging feature are planned features.
 ### Back-end:
 *NODE.JS, EXPRESS.JS, POSTGRES, SEQUELIZE.JS, SOCKET.IO, and other helper libraries
 
-#### App is deployed with Heroku.
+#### App is deployed using Heroku.
 
 #### This is a demo version, pre-MVP version.
